@@ -1,9 +1,21 @@
-from flask import Flask, render_template
+from flask import Flask, url_for
 app = Flask(__name__)
-@app.route('/result')
-def result():
-	dict = {'math':70, 'chem':84, 'phyc':68}
-	return render_template('result.html', result=dict)
 
-if __name__=='__main__':
-	app.run(debug=True)
+@app.route('/')
+def index():
+	pass
+
+@app.route('/login')
+def login():
+	pass
+
+@app.route('/user/<username>')
+def profile(username):
+	pass
+
+with app.test_request_context():
+	print url_for('index')
+	print url_for('login')
+	print url_for('login', next='/')
+	print url_for('profile', username='Jane Doe')
+
