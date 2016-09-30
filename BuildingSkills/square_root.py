@@ -1,16 +1,29 @@
+import math
+
 def square_root(a):
 	'''
-	Takes a as a parameter, chooses a reasonable 
-	value of x and uses it to estimate the square
-	root of a using Newton's method.
-	Epsilon: a small value that determines how 
-	close is close enough.'''
-	x = a/3.0
-	epsilon = 0.00000001
+	Estimates the square root of a number using 
+	Newton's method.
+	
+	Compares the estimated square root with 
+	the value in math.sqrt. Prints a table with 4
+	columns: a, estimated square root, math.sqrt
+	value, absolute value of the difference 
+	between the two estimates
+	'''
+	x = a/2.0
+	epsilon = 0.0000000000001
 	while True:
-		print x
 		y = (x + a/x) / 2
-		if abs(y-x) < epsilon:
+		z = abs(y - x)
+		b = math.sqrt(a)
+		if z < epsilon:
+			print a, x, b, z
 			break
 		x = y
 
+def test_square_root():
+	for i in range(1, 10):
+		square_root(float(i))
+
+test_square_root()
