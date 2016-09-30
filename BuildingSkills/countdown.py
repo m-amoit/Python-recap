@@ -13,4 +13,19 @@ def print_n(s, n):
 	print s
 	print_n(s, n-1)
 
-print_n('Go home', 7)
+def count_down(n):
+	'''Count down using iteration - while statement
+	'''
+	while n > 0:
+		print n
+		n -= 1
+	print 'Blastoff!'
+
+def printn(s, n):
+	'''Print a string n times, using iteration'''
+	while n > 0:
+		print s
+		n -= 1
+
+
+
