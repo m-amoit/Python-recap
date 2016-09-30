@@ -27,5 +27,15 @@ def printn(s, n):
 		print s
 		n -= 1
 
+def break_():
+	'''Using break to end a loop'''
+	while True:
+		line = raw_input('> ')
+		if line == 'done':
+			break
+		print line
 
+	print 'Done!'
+
+break_()
 
