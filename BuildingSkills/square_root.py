@@ -12,7 +12,7 @@ def square_root(a):
 	between the two estimates
 	'''
 	x = a/2.0
-	epsilon = 0.0000000000001
+	epsilon = 0.00000000000001
 	while True:
 		y = (x + a/x) / 2
 		z = abs(y - x)
@@ -26,4 +26,4 @@ def test_square_root():
 	for i in range(1, 10):
 		square_root(float(i))
 
-test_square_root()
+# test_square_root()
