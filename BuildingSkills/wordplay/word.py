@@ -57,5 +57,19 @@ def uses_all(word, required):
 	letters at least once.'''
 	return uses_only(required, word)
 
+def is_abecedarian(word):
+	'''Returns True if the letters in a word appear
+	in alphabetical order (double letters are ok)
+	ord(): converts a character to numeric code.
+	'''
+	word = word.lower()
+	digit = None
+	for i in word:
+		if ord(i) < digit:
+			return False
+		digit = ord(i)
+	return True
+
+
 if __name__ == '__main__':
-	print uses_all('lasciviousness', 'aeiou')
+	print is_abecedarian('aeiou')
