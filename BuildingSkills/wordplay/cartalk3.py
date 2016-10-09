@@ -8,16 +8,15 @@ def reverse(i, j):
 	reverse of each other'''
 	return z_fill(i, 2) == z_fill(j, 2)[::-1]
 
-def is_reversed(daughter):
-	'''Checks for reverse values of simultaneous 
-	mother daughter ages. (Only works when the age
-	difference is a multiple of nine)
+def is_reversed(daughter, diff):
+	'''Checks for pallindromic mother daughter ages.
 	'''
-	diff = 36
 	mother = daughter + diff
+	if mother == 120:
+		return
 	if reverse(daughter, mother):
 		print daughter, mother
-	else:
-		is_reversed(daughter+1)
+	is_reversed(daughter+1, diff)
 
-print is_reversed(0)
+
+is_reversed(0, 36)
