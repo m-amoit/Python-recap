@@ -23,5 +23,16 @@ def capitalize_nested(lst):
 			x.append(y)
 	return x
 
-lst = ['a', 'b', ['c', 'd'],'e', ['f', 'g'],'h']
-print capitalize_nested(lst)
+def cumulative(lst):
+	'''Takes a list of numbers and returns the 
+	cumulative sum; i.e. a new list where the ith 
+	element is the sum of the first i + 1 elements 
+	from the original list.'''
+	x = []
+	count = 0
+	for i in lst:
+		count += i
+		x.append(count)
+	return x
+
+print cumulative([1, 2, 3])
