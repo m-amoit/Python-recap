@@ -12,4 +12,16 @@ def nested_sum(lst):
 def capitalize_nested(lst):
 	'''Takes a nested list of strings and returns a 
 	new nested list with all strings capitalized.'''
-	pass
+	x = []
+	for i in lst:
+		try:
+			x.append(i.capitalize())
+		except AttributeError:
+			y = []
+			for s in i:
+				y.append(s.capitalize())
+			x.append(y)
+	return x
+
+lst = ['a', 'b', ['c', 'd'],'e', ['f', 'g'],'h']
+print capitalize_nested(lst)
