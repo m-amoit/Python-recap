@@ -35,4 +35,38 @@ def cumulative(lst):
 		x.append(count)
 	return x
 
-print cumulative([1, 2, 3])
+def middle(lst):
+	'''Takes a list and returns a new list that 
+	contains all but the first and last elements.'''
+	for i in [len(lst) - 1, 0]:
+		del lst[i]
+	return lst
+
+def chop(lst):
+	'''Takes a list, modifies it by removing the 
+	first and last elements, and returns None.'''
+	for i in [lst[0], lst[len(lst) - 1]]:
+		m = lst.remove(i)
+	return m
+
+def is_sorted(lst):
+	'''Takes a list as a parameter and returns True 
+	if the list is sorted in ascending order and 
+	False otherwise.'''
+	i = 0
+	while i < len(lst) - 1:
+		if lst[i] > lst[i+1]:
+			return False
+		i += 1
+	return True
+
+def is_anagram(str1, str2):
+	'''Takes two strings and returns True if they are 
+	anagrams.'''
+	if len(str1) != len(str2):
+		return False
+	for i in str1:
+		if i not in str2:
+			return False
+	return True
+
